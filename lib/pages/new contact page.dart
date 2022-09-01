@@ -42,7 +42,7 @@ class _NewContactPageState extends State<NewContactPage> {
             TextFormField(
               controller: nameController,
               decoration: InputDecoration(
-                labelText: 'Enter name',
+                labelText: 'Enter vb name',
                 prefixIcon: Icon(Icons.person),
               ),
               validator: (value) {
@@ -75,6 +75,29 @@ class _NewContactPageState extends State<NewContactPage> {
           ],
         ),
       ),
+    body: Form(
+      child: ListView(
+        children: [
+          TextFormField(
+            decoration: InputDecoration(
+              labelText: 'Enter Name',
+              prefixIcon: Icon(Icons.person),
+            ),
+            validator: (value){
+              if(value == null || value.isEmpty){
+                return 'Pleaee Provide a valid Name!';
+              }
+              return null;
+            },
+
+          )
+        ],
+      ),
+    ),
+
+        
+
+
     );
   }
 
