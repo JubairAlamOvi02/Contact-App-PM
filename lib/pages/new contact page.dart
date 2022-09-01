@@ -47,7 +47,7 @@ class _NewContactPageState extends State<NewContactPage> {
               ),
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Please enter a valid UseR Name';
+                  return 'Please enter a valid UseRR Name';
                 }
                 return null;
               },
