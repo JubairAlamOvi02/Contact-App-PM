@@ -1,3 +1,4 @@
+import 'package:contact_app_pm/db/sqlite_helper.dart';
 import 'package:contact_app_pm/models/contact_modle.dart';
 import 'package:flutter/material.dart';
 
@@ -45,12 +46,12 @@ class _NewContactPageState extends State<NewContactPage> {
                 labelText: 'Enter name',
                 prefixIcon: Icon(Icons.person),
               ),
-              validator: (value) {
+              /*validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter a valid User Name';
                 }
                 return null;
-              },
+              },*/
 
             ),
             SizedBox(height: 10,),
@@ -82,6 +83,7 @@ class _NewContactPageState extends State<NewContactPage> {
     if (_formKey.currentState!.validate()) {
       final contact = ContactModel(nameController.text, emailController.text);
       print(contact);
+      DBHelper.insertContact(contact).then((rowid) => Navigator.pop(context));
     }
   }
 }
