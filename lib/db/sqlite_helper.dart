@@ -25,6 +25,7 @@ class DBHelper {
 
   static Future<List<ContactModel>> getAllContacts() async {
     final db = await open();
-    db.query(tblContact)
+    final mapList=await db.query(tblContact);
+    return List.generate(mapList.length, (index) => ContactModel.fromMap(mapList[index]));
   }
 }

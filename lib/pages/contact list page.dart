@@ -1,3 +1,4 @@
+import 'package:contact_app_pm/db/sqlite_helper.dart';
 import 'package:contact_app_pm/pages/new%20contact%20page.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +11,13 @@ class ContactListPage extends StatefulWidget {
 }
 
 class _ContactListPageState extends State<ContactListPage> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    DBHelper.getAllContacts();
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

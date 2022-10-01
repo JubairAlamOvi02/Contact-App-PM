@@ -14,6 +14,13 @@ class ContactModel {
         required this.email
       });
 
+  factory ContactModel.fromMap(Map<String,dynamic>map)=>ContactModel(
+      name: map[tblName],
+      email: map[tblEmail]
+  );
+
+
+
   Map<String,dynamic> toMap(){
 
     var map =<String,dynamic> {
