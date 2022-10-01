@@ -46,19 +46,19 @@ class _NewContactPageState extends State<NewContactPage> {
                 labelText: 'Enter name',
                 prefixIcon: Icon(Icons.person),
               ),
-              /*validator: (value) {
+              validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please enter a valid UseRR Name';
                 }
                 return null;
-              },*/
+              },
 
             ),
             SizedBox(height: 10,),
 
             TextFormField(
               controller: emailController,
-              keyboardType: TextInputType.phone,
+              keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 labelText: 'Enter Email',
                 prefixIcon: Icon(Icons.email),
@@ -82,10 +82,15 @@ class _NewContactPageState extends State<NewContactPage> {
 
   void _saveContact() {
     if (_formKey.currentState!.validate()) {
-      final contact = ContactModel(nameController.text, emailController.text);
+     final contact = ContactModel(
+         name: nameController.text,
+         email: emailController.text
+     );
+
       print(contact);
       DBHelper.insertContact(contact)
-          .then((rowid) => Navigator.pop(context)).onError((error, stackTrace) => throw 'Save Failed');
+          .then((rowId) => Navigator.pop(context))
+          .onError((error, stackTrace) => throw 'Save Failed');
     }
   }
 }

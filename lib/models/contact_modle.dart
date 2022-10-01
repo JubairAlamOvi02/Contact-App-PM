@@ -4,19 +4,21 @@ const String tblEmail = 'email';
 const String tblid = 'id';
 class ContactModel {
   int? id;
-  String? name;
-  String? email;
+  String name;
+  String email;
 
   ContactModel(
-     // this.id,
-      this.name, 
-      this.email);
+      {
+        this.id,
+        required this.name,
+        required this.email
+      });
 
   Map<String,dynamic> toMap(){
 
     var map =<String,dynamic> {
-      tblContact:name,
-      tblEmail:email,
+      tblName : name,
+      tblEmail : email,
     };
     if(id != null){
       map[tblid] = id;
