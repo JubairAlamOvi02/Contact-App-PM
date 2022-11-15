@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 class ContactDetailsPage extends StatefulWidget {
@@ -9,6 +11,21 @@ class ContactDetailsPage extends StatefulWidget {
 }
 
 class _ContactDetailsPageState extends State<ContactDetailsPage> {
+
+  /*@override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+  @override
+  void didChangeDependencies() {
+    // TODO: implement didChangeDependencies
+    int  id = ModalRoute.of(context)!.settings.arguments as int;
+    print(id);
+    super.didChangeDependencies();
+  }
+*/
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -13,6 +13,7 @@ class NewContactPage extends StatefulWidget {
 class _NewContactPageState extends State<NewContactPage> {
   final nameController = TextEditingController();
   final emailController = TextEditingController();
+  //final idController =TextEditingController();
 
   final _formKey = GlobalKey<FormState>();
 
@@ -20,6 +21,7 @@ class _NewContactPageState extends State<NewContactPage> {
   void dispose() {
     nameController.dispose();
     emailController.dispose();
+    //idController.dispose();
   }
 
   @override
